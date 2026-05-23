@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="맥락 기반 중국어 학습을 돕는 교육용 번역 학습 웹앱" />
+  <!-- Pretendard 폰트 (가독성 우선) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>나만의 중국어 AI 친구</title>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- ===== 헤더 ===== -->
+    <header class="app-header">
+      <div class="header-logo">
+        <span class="header-logo-mark">朋</span>
+        <span>나만의 중국어 AI 친구</span>
+      </div>
+      <p class="header-tagline">
+        단순 번역이 아니라, <strong>왜 그렇게 말하는지</strong>까지 알려주는 중국어 학습 도우미
+      </p>
+      <span class="header-subnote">
+        중국어 학습자의 오류 유형 분석 · 맥락 기반 언어 학습 탐구 프로젝트
+      </span>
+    </header>
+
+    <!-- ===== 입력 카드 ===== -->
+    <div class="input-card">
+      <!-- 번역 방향 토글 -->
+      <div class="direction-row">
+        <button type="button" class="direction-btn direction-btn--active" data-dir="ko2cn">
+          한국어 → 중국어
+        </button>
+        <button type="button" class="direction-btn" data-dir="cn2ko">
+          중국어 → 한국어
+        </button>
+      </div>
+
+      <!-- 입력창 -->
+      <div class="field-label">📝 학습할 문장을 입력해 보세요</div>
+      <textarea
+        id="inputText"
+        class="input-textarea"
+        placeholder="예) 밥 먹었어? / 주말에 같이 영화 볼래? / 만나서 반가워요"
+      ></textarea>
+
+      <!-- 상황 선택 -->
+      <div class="situation-label">💬 어떤 상황에서 쓸 말인가요?</div>
+      <div class="situation-grid" id="situationGrid">
+        <button type="button" class="situation-btn situation-btn--active" data-situ="friend">🧑‍🤝‍🧑 친구와 대화</button>
+        <button type="button" class="situation-btn" data-situ="school">🎓 학교 발표</button>
+        <button type="button" class="situation-btn" data-situ="travel">🧳 여행</button>
+        <button type="button" class="situation-btn" data-situ="sns">💬 SNS</button>
+        <button type="button" class="situation-btn" data-situ="formal">📄 공식 표현</button>
+      </div>
+
+      <!-- 제출 버튼 -->
+      <button class="submit-btn" id="submitBtn">학습 분석 받기</button>
+      <p class="input-hint">
+        결과는 자연 번역 · 직역 · 병음 · 문법 · 오류 피드백 · 상황별 표현 · 회화 · 문화 · HSK 난이도로 정리됩니다
+      </p>
+    </div>
+
+    <!-- ===== 결과 영역 (JS가 채움) ===== -->
+    <div class="results-area" id="results">
+      <div class="empty-state">
+        <span class="empty-state-icon">🍵</span>
+        문장을 입력하고 <strong>학습 분석 받기</strong>를 눌러보세요.<br />
+        AI 친구가 번역과 함께 학습 피드백을 정리해 드려요.
+      </div>
+    </div>
+
+    <!-- ===== 푸터 ===== -->
+    <footer class="app-footer">
+      나만의 중국어 AI 친구 · 맥락 기반 중국어 학습 프로젝트<br />
+      학습 보조용 도구입니다. 중요한 표현은 선생님이나 원어민에게 한 번 더 확인해 보세요.
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
